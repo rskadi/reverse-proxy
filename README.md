@@ -35,14 +35,3 @@ curl http://localhost:8080
 | `-listen` | `:8080` | Address the proxy listens on |
 | `-backend` | `http://localhost:8081` | Backend server to forward requests to |
 | `-timeout` | `30s` | Request timeout for backend calls |
-
-## Architecture
-
-```mermaid
-graph TD
-    A[Client Request] --> B[Go Reverse Proxy]
-    B --> C[Copy Headers]
-    C --> D[Forward to Backend]
-    D --> E[Copy Backend Response]
-    E --> F[Return Response to Client]
-```
